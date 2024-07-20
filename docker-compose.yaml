@@ -10,6 +10,7 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 6443:6443 # for kubernetes api
       # - 443:443/tcp # Uncomment if you want HTTP3
       # - 443:443/udp # Uncomment if you want HTTP3
     environment:
