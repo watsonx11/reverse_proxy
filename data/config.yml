@@ -63,7 +63,7 @@ http:
         - "https"
       rule: "Host(`pihole02.local.fiftyfifty90.com`)"
       tls: {}
-      service: pihole
+      service: pihole02
     proxmox01:
       entryPoints:
         - "https"
@@ -108,7 +108,7 @@ http:
     pihole:
       loadBalancer:
         servers:
-          - url: "http://192.168.1.10:8080"
+          - url: "http://192.168.1.10:80"
     pihole02:
       loadBalancer:
         servers:
