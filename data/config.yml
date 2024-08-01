@@ -55,7 +55,7 @@ http:
     pihole01:
       entryPoints:
         - "https"
-      rule: "Host(`pihole.local.fiftyfifty90.com`)"
+      rule: "Host(`pihole01.local.fiftyfifty90.com`)"
       tls: {}
       service: pihole01
     pihole02:
