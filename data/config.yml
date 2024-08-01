@@ -149,19 +149,19 @@ http:
         - default-whitelist
         - default-headers
 
-tcp:
-  routers:
-    k3s-router:
-      rule: "HostSNI(`*`)"
-      service: "k3s-service"
-      entryPoints:
-        - "k3s"
-      tls:
-        passthrough: true
+# tcp:
+#   routers:
+#     k3s-router:
+#       rule: "HostSNI(`*`)"
+#       service: "k3s-service"
+#       entryPoints:
+#         - "k3s"
+#       tls:
+#         passthrough: true
 
-  services:
-    k3s-service:
-      loadBalancer:
-        servers:
-          - address: "192.168.1.3:6443"
+#   services:
+#     k3s-service:
+#       loadBalancer:
+#         servers:
+#           - address: "192.168.1.3:6443"
 
