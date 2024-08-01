@@ -52,12 +52,6 @@ http:
       rule: "Host(`homepage.local.fiftyfifty90.com`)"
       tls: {}
       service: homepage
-    pihole:
-      entryPoints:
-        - "https"
-      rule: "Host(`pihole.local.fiftyfifty90.com`)"
-      tls: {}
-      service: pihole
     pihole02:
       entryPoints:
         - "https"
@@ -105,10 +99,6 @@ http:
       loadBalancer:
         servers:
           - url: "http://192.168.1.3:3000"
-    pihole:
-      loadBalancer:
-        servers:
-          - url: "http://192.168.1.10:80"
     pihole02:
       loadBalancer:
         servers:
