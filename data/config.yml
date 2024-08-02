@@ -4,7 +4,7 @@ http:
     search:
       entryPoints:
         - "https"
-      rule: "Host(`search.fiftyfifty90.com`)"
+      rule: "Host(`search.local.fiftyfifty90.com`)"
       middlewares:
         - default-headers
         - https-redirectscheme
