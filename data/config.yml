@@ -1,6 +1,12 @@
 http:
  #region routers 
   routers:
+    sync01:
+      entryPoints:
+        - "http"
+      rule: "Host(`sync01.local.fiftyfifty90.com`)"
+      tls: {}
+      service: sync01
     search:
       entryPoints:
         - "https"
@@ -85,6 +91,11 @@ http:
 #endregion
 #region services
   services:
+    sync01:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.1.3:8384"
+        passHostHeader: true
     search:
       loadBalancer:
         servers:
