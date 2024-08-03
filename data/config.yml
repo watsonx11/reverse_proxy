@@ -3,7 +3,7 @@ http:
   routers:
     sync01:
       entryPoints:
-        - "http"
+        - "https"
       rule: "Host(`sync01.local.fiftyfifty90.com`)"
       middlewares:
         - default-headers
