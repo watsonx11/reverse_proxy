@@ -17,8 +17,6 @@ entryPoints:
           scheme: https
   https:
     address: ":443"
-  k3s:
-    address: ":6443"
 serversTransport:
   insecureSkipVerify: true
 providers:

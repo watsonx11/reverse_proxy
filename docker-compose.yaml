@@ -10,22 +10,15 @@ services:
     ports:
       - 80:80
       - 443:443
-      # - 6443:6443 # for kubernetes api
-      # - 443:443/tcp # Uncomment if you want HTTP3
-      # - 443:443/udp # Uncomment if you want HTTP3
     environment:
-      # CF_DNS_API_TOKEN_FILE: /run/secrets/cf_api_token # note using _FILE for docker secrets
       CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN} # if using .env
       TRAEFIK_DASHBOARD_CREDENTIALS: ${TRAEFIK_DASHBOARD_CREDENTIALS}
-    # secrets:
-    #  - cf_api_token
-    # env_file: .env # use .env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./data/traefik.yml:/traefik.yml:ro
-      - ./data/acme.json:/acme.json
-      - ./data/config.yml:/config.yml:ro
+      - ${PWD}/data/traefik.yml:/traefik.yml:ro
+      - ${PWD}/data/acme.json:/acme.json
+      - ${PWD}/data/config.yml:/config.yml:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
