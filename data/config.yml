@@ -1,6 +1,12 @@
 http:
  #region routers 
   routers:
+    grafana:
+      entryPoints:
+        - "https"
+      rule: "Host(`grafana.local.fiftyfifty90.com`)"
+      tls: {}
+      service: grafana
     sync01:
       entryPoints:
         - "https"
@@ -94,6 +100,11 @@ http:
 #endregion
 #region services
   services:
+    grafana:
+      loadBalancer:
+        servers:
+          - url: "http:192.168.1.3:3000"
+        passHostHeader: true
     sync01:
       loadBalancer:
         servers:
