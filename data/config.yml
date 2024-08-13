@@ -192,6 +192,12 @@ http:
         customRequestHeaders:
           X-Forwarded-Proto: https
 
+    rate-limit-middleware:
+      rateLimit:
+        average: 100
+        burst: 50
+        period: 1s
+
     default-whitelist:
       ipAllowList:
         sourceRange:
