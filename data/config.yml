@@ -17,6 +17,7 @@ http:
       middlewares:
         - default-headers
         - https-redirectscheme
+        - rate-limit-middleware
       tls: {}
       service: prometheus
     sync01:
