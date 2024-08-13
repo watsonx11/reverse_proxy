@@ -17,6 +17,8 @@ entryPoints:
           scheme: https
   https:
     address: ":443"
+  metrics:
+    address: ":8082"
 serversTransport:
   insecureSkipVerify: true
 providers:
@@ -37,3 +39,10 @@ certificatesResolvers:
         resolvers:
           - "1.1.1.1:53"
           - "1.0.0.1:53"
+
+metrics:
+  prometheus:
+    entryPoint: "metrics"
+    addEntryPointsLabels: true
+    addServicesLabels: true
+    addRoutersLabels: true
